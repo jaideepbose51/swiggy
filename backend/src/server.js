@@ -13,6 +13,7 @@ app.use('/api/foods', foodRouter);
 
 
 const PORT = 5000;
-app.listen(PORT, () => {
+app.listen(PORT, (err) => {
+    if (err) throw err;
     console.log('listen on port ' + PORT);
 });
