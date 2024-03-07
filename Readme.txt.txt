@@ -1,0 +1,21 @@
+For frontend:
+npm install react-scripts
+npm start
+
+
+For backend:
+npm install -D nodemon
+npm install cors
+npm install axios
+npm install jsonwebtoken
+npm install jwt
+npm install express-async handler
+npm run dev
+
+
+Install MONGODB on ubuntu : https://youtu.be/HSIh8UswVVY?si=KutbIvHx8_1Ab6MB
+
+
+
+MONGO_URI="mongodb://(mongo_url)/foodmine-db" in .env file at backend folder
+JWT_SECRET="QWERTYUIOPASDFGHJKLZXCVBNM1234567890"
