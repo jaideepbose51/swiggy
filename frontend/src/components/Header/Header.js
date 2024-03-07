@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
-  const user = { name: 'John' };
+  const {user, logout} = useAuth();
   const {cart}=useCart();
-  const logout = () => {};
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const headerStyle = {
