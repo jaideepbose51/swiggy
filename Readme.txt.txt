@@ -19,3 +19,6 @@ Install MONGODB on ubuntu : https://youtu.be/HSIh8UswVVY?si=KutbIvHx8_1Ab6MB
 
 MONGO_URI="mongodb://(mongo_url)/foodmine-db" in .env file at backend folder
 JWT_SECRET="QWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+
+
+We hav eto put our client ID in the PaypalButton.js file, copy it from Paypal website.

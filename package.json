@@ -2,5 +2,17 @@
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "react-router-dom": "^6.22.2"
-  }
+  },
+  "name": "swiggy",
+  "description": "For frontend:\r npm install react-scripts\r npm start",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "postbuild": "mv -f frontend/build backend/src/public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
