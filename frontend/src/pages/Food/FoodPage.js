@@ -6,6 +6,7 @@ import Tags from '../../components/Tags/Tags';
 import { useCart } from '../../hooks/useCart';
 import { getById } from '../../services/foodService';
 import classes from './foodPage.module.css';
+import NotFound from '../../components/NotFound/NotFound';
 export default function FoodPage() {
   const [food, setFood] = useState({});
   const { id } = useParams();
@@ -63,7 +64,7 @@ export default function FoodPage() {
 
             <div className={classes.cook_time}>
               <span>
-                Time to cook about <strong>{food.cookTime}</strong> minutes
+                Time to deliever about <strong>{food.cookTime}</strong> minutes
               </span>
             </div>
 
