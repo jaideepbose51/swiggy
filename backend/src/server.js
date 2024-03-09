@@ -10,6 +10,7 @@ import userRouter from './routers/user.router.js';
 import orderRouter from './routers/order.router.js';
 import path,{ dirname } from 'path';
 import { dbconnect } from './config/database.config.js';
+import uploadRouter from './routers/upload.router.js';
 
 dbconnect();
 
@@ -29,6 +30,7 @@ app.use(
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/upload', uploadRouter);
 
 const publicFolder=path.join(__dirname, 'public');
 app.use(express.static(publicFolder));
@@ -38,7 +40,7 @@ app.get('*',(req,res) => {
     res.sendFile(indexFilePath);
 });
 
-const PORT =process.env.PORT ||  5000;
+const PORT = 5000;
 app.listen(PORT, (err) => {
     if (err) throw err;
     console.log('listen on port ' + PORT);

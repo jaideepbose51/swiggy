@@ -22,3 +22,6 @@ JWT_SECRET="QWERTYUIOPASDFGHJKLZXCVBNM1234567890"
 
 
 We hav eto put our client ID in the PaypalButton.js file, copy it from Paypal website.
+
+
+For image conversion we have to login on cludinary.com so we can edit and add food.

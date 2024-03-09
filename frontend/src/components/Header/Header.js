@@ -1,102 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
+import classes from './header.module.css';
 import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
-  const {user, logout} = useAuth();
-  const {cart}=useCart();
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
-  const headerStyle = {
-    background: 'white',
-    padding: '0',
-    borderBottom: '1px solid #e72929',
-  };
-
-  const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
-    padding: '1rem',
-    display: 'inline-block',
-  };
-
-  const hoverStyle = {
-    background: '#e72929',
-    color: 'white',
-    cursor: 'pointer',
-  };
-
-  const containerStyle = {
-    margin: '0 auto',
-    display: 'flex',
-    justifyContent: 'space-between',
-  };
-
-  const logoStyle = {
-    fontWeight: 'bold',
-    padding: '1rem',
-  };
-
-  const ulStyle = {
-    display: 'flex',
-    listStyleType: 'none',
-    margin: '0',
-  };
-
-  const menuContainerStyle = {
-    position: 'relative',
-  };
-
-  const menuStyle = {
-    position: 'absolute',
-    zIndex: '1001',
-    backgroundColor: 'whitesmoke',
-    display: isMenuOpen ? 'block' : 'none',
-  };
-
-  const cartCountStyle = {
-    backgroundColor: '#ff4d4d',
-    color: 'white',
-    padding: '0.1rem 0.45rem',
-    borderRadius: '100rem',
-    fontSize: '0.9rem',
-  };
+  const { cart } = useCart();
 
   return (
-    <header style={headerStyle}>
-      <div style={containerStyle}>
-        <Link to="/" style={logoStyle}>
+    <header className={classes.header}>
+      <div className={classes.container}>
+        <Link to="/" className={classes.logo}>
           Food Mine!
         </Link>
         <nav>
-          <ul style={ulStyle}>
+          <ul>
             {user ? (
-              <li style={menuContainerStyle} onMouseEnter={() => setMenuOpen(true)} onMouseLeave={() => setMenuOpen(false)}>
-                <Link to="/dashboard" style={{ ...linkStyle, ...hoverStyle }}>
-                  {user.name}
-                </Link>
-                <div style={{ ...menuStyle, ...hoverStyle }}>
-                  <Link to="/profile" style={linkStyle}>
-                    Profile
-                  </Link>
-                  <Link to="/orders" style={linkStyle}>
-                    Orders
-                  </Link>
-                  <a onClick={logout} style={linkStyle}>
-                    Logout
-                  </a>
+              <li className={classes.menu_container}>
+                <Link to="/dashboard">{user.name}</Link>
+                <div className={classes.menu}>
+                  <Link to="/profile">Profile</Link>
+                  <Link to="/orders">Orders</Link>
+                  <a onClick={logout}>Logout</a>
                 </div>
               </li>
             ) : (
-              <Link to="/login" style={{ ...linkStyle, ...hoverStyle }}>
-                Login
-              </Link>
+              <Link to="/login">Login</Link>
             )}
+
             <li>
-              <Link to="/cart" style={{ ...linkStyle, ...hoverStyle }}>
+              <Link to="/cart">
                 Cart
-                {cart.totalCount > 0 && <span style={cartCountStyle}>{cart.totalCount}</span>}
+                {cart.totalCount > 0 && (
+                  <span className={classes.cart_count}>{cart.totalCount}</span>
+                )}
               </Link>
             </li>
           </ul>
