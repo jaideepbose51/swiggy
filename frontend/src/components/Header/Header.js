@@ -4,17 +4,25 @@ import { useCart } from '../../hooks/useCart';
 import classes from './header.module.css';
 import { useAuth } from '../../hooks/useAuth';
 
+import YouTubeLogo from './youtube.svg';
+
 export default function Header() {
   const { user, logout } = useAuth();
-
   const { cart } = useCart();
+
+  const openYouTube = () => {
+    window.location.href = 'https://www.youtube.com';
+  };
 
   return (
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Food Mine!
+          Nearbys!
         </Link>
+        <button className={classes.youtubeButton} onClick={openYouTube}>
+          <img src={YouTubeLogo} alt="YouTube" className={classes.youtubeLogo} />
+        </button>
         <nav>
           <ul>
             {user ? (

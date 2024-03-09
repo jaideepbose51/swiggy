@@ -40,7 +40,6 @@ export default function FoodPage() {
                   food.favorite ? '' : classes.not
                 }`}
               >
-                ❤
               </span>
             </div>
             <div className={classes.rating}>

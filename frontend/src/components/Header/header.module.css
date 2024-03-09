@@ -63,3 +63,21 @@
   border-radius: 100rem;
   font-size: 0.9rem;
 }
+.youtubeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.youtubeLogo {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Additional styles for YouTube button */
+.youtubeButton:hover .youtubeLogo {
+  opacity: 0.8; /* Darken the logo on hover */
+}

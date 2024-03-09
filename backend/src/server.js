@@ -40,7 +40,7 @@ app.get('*',(req,res) => {
     res.sendFile(indexFilePath);
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, (err) => {
     if (err) throw err;
     console.log('listen on port ' + PORT);

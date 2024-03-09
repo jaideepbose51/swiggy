@@ -6,7 +6,7 @@ import classes from './registerPage.module.css';
 import Button from '../../components/Button/Button';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-
+ 
 export default function RegisterPage() {
   const auth = useAuth();
   const { user } = auth;
@@ -82,8 +82,8 @@ export default function RegisterPage() {
               />
     
               <Input
-                type="text"
-                label="Address"
+                type="number"
+                label="Mobile"
                 {...register('address', {
                   required: true,
                   minLength: 10,

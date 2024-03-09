@@ -22,11 +22,7 @@ export default function Thumbnails({ foods }) {
                   food.favorite ? '' : classes.not
                 }`}
               >
-                ❤
               </span>
-              <div className={classes.stars}>
-                <StarRating stars={food.stars} />
-              </div>
               <div className={classes.product_item_footer}>
                 <div className={classes.origins}>
                   {food.origins.map(origin => (

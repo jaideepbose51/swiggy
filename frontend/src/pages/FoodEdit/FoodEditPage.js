@@ -40,12 +40,12 @@ export default function FoodEditPage() {
 
     if (isEditMode) {
       await update(food);
-      toast.success(`Food "${food.name}" updated successfully!`);
+      toast.success(`"${food.name}" updated successfully!`);
       return;
     }
 
     const newFood = await add(food);
-    toast.success(`Food "${food.name}" added successfully!`);
+    toast.success(`"${food.name}" added successfully!`);
     navigate('/admin/editFood/' + newFood.id, { replace: true });
   };
 
@@ -58,7 +58,7 @@ export default function FoodEditPage() {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
-        <Title title={isEditMode ? 'Edit Food' : 'Add Food'} />
+        <Title title={isEditMode ? 'Edit' : 'Add Business'} />
         <form
           className={classes.form}
           onSubmit={handleSubmit(submit)}
@@ -97,14 +97,14 @@ export default function FoodEditPage() {
 
           <Input
             type="text"
-            label="Origins"
+            label="Location"
             {...register('origins', { required: true })}
             error={errors.origins}
           />
 
           <Input
             type="text"
-            label="Cook Time"
+            label="Delivery Time"
             {...register('cookTime', { required: true })}
             error={errors.cookTime}
           />
